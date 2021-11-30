@@ -75,6 +75,7 @@ function init() {
 
       this.visible = true;
 
+    //   平移移动位置
       this.translate = function () {
 
           cube.translateX(controls.translateX);
@@ -161,6 +162,7 @@ function init() {
       cube.rotation.y = controls.rotationY;
       cube.rotation.z = controls.rotationZ;
 
+    //   设置缩放
       cube.scale.set(controls.scaleX, controls.scaleY, controls.scaleZ);
       requestAnimationFrame(render);
       renderer.render(scene, camera);
