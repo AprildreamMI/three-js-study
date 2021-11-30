@@ -56,6 +56,7 @@ function init() {
 
     var controls = new function () {
         this.rotationSpeed = 0.02;
+        // 场景的子模块
         this.numberOfObjects = scene.children.length;
 
         this.removeCube = function () {
@@ -67,6 +68,7 @@ function init() {
             }
         };
 
+        // 添加一个模块
         this.addCube = function () {
 
             var cubeSize = Math.ceil((Math.random() * 3));
@@ -81,6 +83,7 @@ function init() {
 
             // position the cube randomly in the scene
 
+            // 模块的宽高
             cube.position.x = -30 + Math.round((Math.random() * planeGeometry.parameters.width));
             cube.position.y = Math.round((Math.random() * 5));
             cube.position.z = -20 + Math.round((Math.random() * planeGeometry.parameters.height));

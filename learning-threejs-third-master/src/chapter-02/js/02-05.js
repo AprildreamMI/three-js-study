@@ -80,12 +80,14 @@ function init() {
 
   var materials = [
     new THREE.MeshBasicMaterial({color: 0x000000, wireframe: true}),
-    new THREE.MeshLambertMaterial({opacity: 0.6, color: 0x44ff44, transparent: true})
+    // new THREE.MeshLambertMaterial({opacity: 0.6, color: 0x44ff44, transparent: true})
   ];
 
   var mesh = THREE.SceneUtils.createMultiMaterialObject(geom, materials);
+  console.log('mesh', mesh)
   mesh.castShadow = true;
   mesh.children.forEach(function (e) {
+      console.log('mesh item', e)
       e.castShadow = true
   });
 
@@ -135,9 +137,11 @@ function init() {
               e.castShadow = true
           });
 
+          //   移动坐标
           mesh2.translateX(5);
           mesh2.translateZ(5);
           mesh2.name = "clone";
+          //   查找子组件
           scene.remove(scene.getChildByName("clone"));
           scene.add(mesh2);
 
