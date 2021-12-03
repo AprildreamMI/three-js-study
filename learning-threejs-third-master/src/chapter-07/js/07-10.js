@@ -20,7 +20,7 @@ function init() {
   function createSprites() {
     group = new THREE.Object3D();
     var range = 200;
-    for (var i = 0; i < 400; i++) {
+    for (var i = 0; i < 20; i++) {
       group.add(createSprite(10, false, 0.6, 0xffffff, i % 5, range));
     }
     scene.add(group);
@@ -43,6 +43,7 @@ function init() {
     spriteMaterial.blending = THREE.AdditiveBlending;
 
     var sprite = new THREE.Sprite(spriteMaterial);
+    console.log('精灵', sprite)
     sprite.scale.set(size, size, size);
     sprite.position.set(
       Math.random() * range - range / 2,

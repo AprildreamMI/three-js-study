@@ -47,7 +47,7 @@ function init() {
     var color = new THREE.Color(color);
     color.setHSL(color.getHSL().h,
       color.getHSL().s,
-      (Math.random()) * color.getHSL().l);
+      (Math.random()) * color.getHSL().l); // L是随机的亮度
 
     var material = new THREE.PointsMaterial({
       size: size,
@@ -109,8 +109,8 @@ function init() {
           if (v.x <= -20 || v.x >= 20) v.velocityX = v.velocityX * -1;
           if (v.z <= -20 || v.z >= 20) v.velocityZ = v.velocityZ * -1;
         });
-
         child.geometry.verticesNeedUpdate = true;
+        child.rotation.y += 0.05
       }
     });
 
